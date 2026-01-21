@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { useState } from "react";
-import posterUrl from "../assets/videos/avatar_poster.jpg";
+import posterUrl from "../assets/videos/avatar_poster.png";
 
 interface AvatarVideoProps {
   videoUrl: string;
