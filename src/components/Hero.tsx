@@ -1,7 +1,7 @@
 import { ArrowDown } from "lucide-react";
 import { AvatarVideo } from "./AvatarVideo";
 import { motion } from "framer-motion";
-import avatarVideoUrl from "../assets/videos/avatar_video_optimized.mp4";
+import avatarVideoUrl from "../assets/videos/avatar_video_hevc.mp4";
 
 interface HeroProps {
   language: string;
