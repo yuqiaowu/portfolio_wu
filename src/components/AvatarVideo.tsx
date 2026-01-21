@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { useState } from "react";
-import posterUrl from "../assets/videos/avatar_poster.png";
+import posterUrl from "../assets/videos/avatar_poster_v2.png";
 
 interface AvatarVideoProps {
   videoUrl: string;
@@ -38,7 +38,7 @@ export function AvatarVideo({ videoUrl, size = 320 }: AvatarVideoProps) {
         className="w-full h-full object-contain"
         style={{ background: "transparent" }}
         onPlaying={() => setIsVideoLoaded(true)}
-        onClick={(e) => {
+        onClick={(e: React.MouseEvent<HTMLVideoElement>) => {
           const video = e.currentTarget;
           if (video.paused) {
             video.play();
