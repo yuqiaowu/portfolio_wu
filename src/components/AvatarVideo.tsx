@@ -1,4 +1,6 @@
 import { motion } from "motion/react";
+import { useState } from "react";
+import posterUrl from "../assets/videos/avatar_poster.jpg";
 
 interface AvatarVideoProps {
   videoUrl: string;
@@ -6,6 +8,8 @@ interface AvatarVideoProps {
 }
 
 export function AvatarVideo({ videoUrl, size = 320 }: AvatarVideoProps) {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
   return (
     <motion.div
       className="relative flex-shrink-0 w-full max-w-[280px] sm:max-w-[320px] md:max-w-none"
@@ -14,14 +18,27 @@ export function AvatarVideo({ videoUrl, size = 320 }: AvatarVideoProps) {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      {/* 视频 - 直接显示，不添加额外装饰 */}
-      <video
+      {/* 封面图片 - 视频加载前显示 */}
+      <motion.img
+        src={posterUrl}
+        alt="Avatar Poster"
+        className="absolute inset-0 w-full h-full object-contain pointer-events-none"
+        animate={{ opacity: isVideoLoaded ? 0 : 1 }}
+        transition={{ duration: 0.5 }}
+      />
+
+      {/* 视频 - 加载完成后淡入 */}
+      <motion.video
         src={videoUrl}
+        poster={posterUrl}
         autoPlay
         loop
         muted
         playsInline
         className="w-full h-full object-contain"
+        onLoadedData={() => setIsVideoLoaded(true)}
+        animate={{ opacity: isVideoLoaded ? 1 : 0 }}
+        transition={{ duration: 0.5 }}
       />
     </motion.div>
   );

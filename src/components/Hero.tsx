@@ -1,6 +1,7 @@
 import { ArrowDown } from "lucide-react";
 import { AvatarVideo } from "./AvatarVideo";
 import { motion } from "framer-motion";
+import avatarVideoUrl from "../assets/videos/avatar_video_optimized.mp4";
 
 interface HeroProps {
   language: string;
@@ -149,13 +150,10 @@ export function Hero({ language }: HeroProps) {
         <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
           {/* 左侧：视频头像 */}
           <div className="flex-shrink-0">
-            import avatarVideoUrl from "../assets/videos/avatar_video_optimized.mp4";
-
-            // ... existing imports
-
-            export function Hero({language}: HeroProps) {
-  // ... existing code
-
+            <AvatarVideo
+              videoUrl={avatarVideoUrl}
+              size={360}
+            />
           </div>
 
           {/* 右侧：文字内容 */}
