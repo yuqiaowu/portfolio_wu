@@ -36,7 +36,14 @@ export function AvatarVideo({ videoUrl, size = 320 }: AvatarVideoProps) {
         muted
         playsInline
         className="w-full h-full object-contain"
-        onLoadedData={() => setIsVideoLoaded(true)}
+        style={{ background: "transparent" }}
+        onPlaying={() => setIsVideoLoaded(true)}
+        onClick={(e) => {
+          const video = e.currentTarget;
+          if (video.paused) {
+            video.play();
+          }
+        }}
         animate={{ opacity: isVideoLoaded ? 1 : 0 }}
         transition={{ duration: 0.5 }}
       />
