@@ -51,7 +51,7 @@ export function Hero({ language }: HeroProps) {
       {/* iOS 风格的流动背景光晕 - 绿色主色调 + 红/紫色点缀 */}
       <div className="absolute inset-0 overflow-hidden">
         {/* 绿色主光晕 */}
-        <motion.div 
+        <motion.div
           className="absolute w-[500px] h-[500px] bg-emerald-500 rounded-full opacity-12 blur-[120px]"
           style={{ top: "20%", left: "10%" }}
           animate={{
@@ -65,8 +65,8 @@ export function Hero({ language }: HeroProps) {
             ease: "easeInOut"
           }}
         />
-        
-        <motion.div 
+
+        <motion.div
           className="absolute w-[600px] h-[600px] bg-green-400 rounded-full opacity-10 blur-[130px]"
           style={{ bottom: "15%", right: "15%" }}
           animate={{
@@ -80,9 +80,9 @@ export function Hero({ language }: HeroProps) {
             ease: "easeInOut"
           }}
         />
-        
+
         {/* 红色点缀光晕 - 增强显示 */}
-        <motion.div 
+        <motion.div
           className="absolute w-[500px] h-[500px] bg-rose-500 rounded-full opacity-15 blur-[110px]"
           style={{ top: "50%", right: "20%" }}
           animate={{
@@ -96,8 +96,8 @@ export function Hero({ language }: HeroProps) {
             ease: "easeInOut"
           }}
         />
-        
-        <motion.div 
+
+        <motion.div
           className="absolute w-[380px] h-[380px] bg-red-400 rounded-full opacity-12 blur-[95px]"
           style={{ top: "25%", right: "35%" }}
           animate={{
@@ -111,9 +111,9 @@ export function Hero({ language }: HeroProps) {
             ease: "easeInOut"
           }}
         />
-        
+
         {/* 紫色点缀光晕 */}
-        <motion.div 
+        <motion.div
           className="absolute w-[450px] h-[450px] bg-purple-500 rounded-full opacity-8 blur-[110px]"
           style={{ bottom: "30%", left: "25%" }}
           animate={{
@@ -128,7 +128,7 @@ export function Hero({ language }: HeroProps) {
           }}
         />
 
-        <motion.div 
+        <motion.div
           className="absolute w-[350px] h-[350px] bg-emerald-400 rounded-full opacity-10 blur-[90px]"
           style={{ top: "60%", left: "50%" }}
           animate={{
@@ -149,39 +149,42 @@ export function Hero({ language }: HeroProps) {
         <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
           {/* 左侧：视频头像 */}
           <div className="flex-shrink-0">
-            <AvatarVideo
-              videoUrl="https://raw.githubusercontent.com/yuqiaowu/profolio/0d644e3bad1a6d430a5e6f5b484fae95de8c9092/videos/%E6%8C%A5%E6%89%8B2_web_ultra_hd.mp4"
-              size={360}
-            />
+            import avatarVideoUrl from "../assets/videos/avatar_video_optimized.mp4";
+
+            // ... existing imports
+
+            export function Hero({language}: HeroProps) {
+  // ... existing code
+
           </div>
-          
+
           {/* 右侧：文字内容 */}
-          <div 
+          <div
             className="space-y-4 md:space-y-6 flex-1 text-center md:text-left"
           >
             {/* 问候语 - 高亮显示 */}
-            <p 
+            <p
               className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400 text-lg md:text-xl mb-3 font-semibold"
             >
               {currentContent.greeting}
             </p>
-            
+
             {/* 姓名 */}
-            <h1 
+            <h1
               className="text-[var(--color-text-primary)] text-4xl md:text-6xl"
             >
               {currentContent.name}
             </h1>
-            
+
             {/* 职业 - 高亮显示 */}
-            <h2 
+            <h2
               className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400 mb-4 font-semibold text-2xl md:text-4xl"
             >
               {currentContent.title}
             </h2>
-            
+
             {/* 自我介绍 */}
-            <p 
+            <p
               className="text-[var(--color-text-secondary)] max-w-2xl text-base md:text-lg leading-relaxed"
             >
               {currentContent.intro}
