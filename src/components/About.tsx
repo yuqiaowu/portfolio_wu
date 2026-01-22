@@ -68,10 +68,18 @@ export function About({ language }: AboutProps) {
       fullCompany: "恩威集团",
       fullCompanyEn: "Enwei Group",
       responsibilities: [
-        "负责恩威生活app首页、详情页、付款页体验优化，太子峪雪场小程序及线下物料设计",
+        "负责恩威生活App首页、详情页、付款页体验优化，太子峪雪场小程序及线下物料设计",
+        "宸瑞健康App首页改版、在线问诊板块流程优化",
+        "游四方短租App主业务体验优化、视觉改版",
+        "恩威生活详情页、付款页体验优化",
+        "恩威生活小程序",
       ],
       responsibilitiesEn: [
-        "Responsible for Enwei Life app homepage, detail page, and payment page experience optimization, Taiziyugu Snow Resort mini-program and offline material design",
+        "Responsible for Enwei Life app homepage, detail page, and payment page experience optimization; Taiziyugu Snow Resort mini-program and offline materials design",
+        "Chenrui Health app homepage redesign; optimized online consultation module flow",
+        "YouSifang short-term rental app core experience optimization and visual redesign",
+        "Enwei Life detail and payment page experience optimization",
+        "Enwei Life WeChat mini-program",
       ],
     },
     {
