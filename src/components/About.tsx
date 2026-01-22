@@ -77,15 +77,19 @@ export function About({ language }: AboutProps) {
     {
       period: "2014.02-2014.12 (1年)",
       periodEn: "2014.02-2014.12 (1 year)",
-      company: "中航国际",
-      companyEn: "AVIC International",
+      company: "中航建筑工程有限公司",
+      companyEn: "AVIC Architecture Co., Ltd.",
       title: "建筑设计师助理",
       titleEn: "Architectural Design Assistant",
-      fullCompany: "中航建筑有限公司",
+      fullCompany: "中航建筑工程有限公司",
       fullCompanyEn: "AVIC Architecture Co., Ltd.",
-      responsibilities: ["协助设计师完成方案图设计施工图绘制"],
+      responsibilities: [
+        "协助建筑设计师完成方案设计及施工图绘制，确保图纸符合项目规范与技术要求",
+        "参与投标项目，独立完成标书制作与图纸排版，提升标书整体专业性与可视化表达",
+      ],
       responsibilitiesEn: [
-        "Assisted designers in completing schematic design and construction drawing preparation",
+        "Assisted architectural designers in completing schematic design and construction drawing preparation, ensuring drawings met project specifications and technical requirements",
+        "Participated in bidding projects, independently completed bid document production and drawing layout, enhancing the overall professionalism and visual expression of bid documents",
       ],
     },
   ];
@@ -285,12 +289,12 @@ export function About({ language }: AboutProps) {
   useEffect(() => {
     if (progress >= 100 && !isTransitioning) {
       setIsTransitioning(true);
-      
+
       // 向左滑动到下一页
       const nextPage = currentPage + 1;
       setCurrentPage(nextPage);
       setProgress(0);
-      
+
       // 动画完成后检查是否需要重置到第一屏
       setTimeout(() => {
         // 如果当前在第4屏（索引3，即第一屏的副本），瞬间跳回第一屏（索引0）
@@ -339,20 +343,18 @@ export function About({ language }: AboutProps) {
               <motion.button
                 key={index}
                 onClick={() => setSelectedCompany(index)}
-                className={`w-full text-left px-4 sm:px-6 py-4 rounded-2xl transition-all duration-300 ${
-                  selectedCompany === index
+                className={`w-full text-left px-4 sm:px-6 py-4 rounded-2xl transition-all duration-300 ${selectedCompany === index
                     ? "glass-effect-elevated border-l-4 border-[var(--color-accent)]"
                     : "glass-effect hover:glass-effect-elevated"
-                }`}
+                  }`}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <p
-                  className={`font-medium mb-1 text-sm sm:text-base ${
-                    selectedCompany === index
+                  className={`font-medium mb-1 text-sm sm:text-base ${selectedCompany === index
                       ? "text-[var(--color-accent)]"
                       : "text-[var(--color-text-primary)]"
-                  }`}
+                    }`}
                 >
                   {language === "zh" ? exp.company : exp.companyEn}
                 </p>
@@ -505,7 +507,7 @@ export function About({ language }: AboutProps) {
                     // 显示逻辑：当currentPage为3时，实际显示第0页的进度
                     const displayPage = currentPage % totalPages;
                     const isActive = displayPage === index;
-                    
+
                     return (
                       <button
                         key={index}
